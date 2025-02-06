@@ -340,3 +340,9 @@ R squared = 0.996")
 
 height_ir_plot
 ```
+
+# 2c Questions
+
+1. I have learned that linear models vary in efficacy based on the incorporation of species. 
+2. Yes, but I think I still need to review if my residuals look okay! I might have to restructure data, but I hope not. I'm still trying to think about what I want to say about my data. I want to create a summary figure, but I'm not sure what I should include. 
+3. I think I'll have a really hard time with my residual checks and creating a summary figure. I should go to office hours. 
