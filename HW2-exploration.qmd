@@ -1,0 +1,342 @@
+---
+title: "HW 2 exploration"
+author: "Hayden Vega"
+date: "2/6/25"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+```{r}
+install.packages("ggeffects")
+install.packages("DHARMa")
+install.packages("sjlabelled")
+install.packages("lme4")
+install.packages("lme4", type = "source")
+oo <- options(repos = "https://cran.r-project.org/")
+install.packages("Matrix")
+install.packages("lme4")
+install.packages("glmmTMG")
+install.packages("parameters")
+options(oo)
+install.packages("effects")
+install.packages("MuMIn")
+```
+
+```{r include=FALSE}
+library(janitor)
+library(tidyverse)
+library(ggeffects)
+library(sjlabelled)
+library(lme4)
+library(DHARMa)
+library(parameters)
+library(effects)
+library(MuMIn)
+```
+
+
+
+#Load in data for each trait with individual ID delimiter
+```{r}
+height_all <- read.csv("final_height.csv", header = TRUE, sep = ",") %>% separate_wider_delim(specimen_id, delim = "-", names = c("date", "site", "individual", "specimen"), cols_remove=FALSE) %>% 
+  unite("individual_id", date:individual, remove = TRUE, sep = "-")
+
+width_all <- read.csv("final_width.csv", header = TRUE, sep = ",") %>% separate_wider_delim(specimen_id, delim = "-", names = c("date", "site", "individual", "specimen"), cols_remove=FALSE) %>% 
+  unite("individual_id", date:individual, remove = TRUE, sep = "-")
+
+perimeter_all <- read.csv("final_perimeter.csv", header = TRUE, sep = ",") %>% separate_wider_delim(specimen_id, delim = "-", names = c("date", "site", "individual", "specimen"), cols_remove=FALSE) %>% 
+  unite("individual_id", date:individual, remove = TRUE, sep = "-")
+
+surf_all <- read.csv("final_surf.csv", header = TRUE, sep = ",") %>% separate_wider_delim(specimen_id, delim = "-", names = c("date", "site", "individual", "specimen"), cols_remove=FALSE) %>% 
+  unite("individual_id", date:individual, remove = TRUE, sep = "-")
+
+tdmc_all <- read.csv("final_tdmc.csv", header = TRUE, sep = ",") %>% separate_wider_delim(specimen_id, delim = "-", names = c("date", "site", "individual", "specimen"), cols_remove=FALSE) %>% 
+  unite("individual_id", date:individual, remove = TRUE, sep = "-")
+
+thickness_all <- read.csv("final_thickness.csv", header = TRUE, sep = ",") %>% separate_wider_delim(specimen_id, delim = "-", names = c("date", "site", "individual", "specimen"), cols_remove=FALSE) %>% 
+  unite("individual_id", date:individual, remove = TRUE, sep = "-")
+
+volume_all <- read.csv("final_volume.csv", header = TRUE, sep = ",") %>% separate_wider_delim(specimen_id, delim = "-", names = c("date", "site", "individual", "specimen"), cols_remove=FALSE) %>% 
+  unite("individual_id", date:individual, remove = TRUE, sep = "-")
+
+
+
+```
+
+```{r visualization-objects}
+# ggplot theme
+theme_set(theme_bw() +
+            theme(panel.grid = element_blank()))
+
+# abline color
+ref_line_col <- "grey"
+
+# model prediction color
+model_col <- "darkblue"
+```
+
+
+#Create multiple regression for each trait - initial & rehydrate WITH & WITHOUT species
+```{r height-models, include=FALSE}
+
+height_reg_ir <- lmer(height_i ~ height_r * species + (1 | individual_id), data = height_all)
+summary(height_reg_ir)
+
+height_reg_ir_nospecies <- lmer(height_i ~ height_r + (1 | individual_id), data = height_all)
+summary(height_reg_ir_nospecies)
+```
+
+```{r width-models}
+width_reg_ir <- lmer(width_i ~ width_r * species + (1 | individual_id), data = width_all)
+
+
+width_reg_ir_nospecies <- lmer(width_i ~ width_r + (1 | individual_id), data = width_all)
+summary(width_reg_ir_nospecies)
+```
+
+```{r perimeter-models}
+perimeter_reg_ir <- lmer(per_i ~ per_r * species + (1 | individual_id), data = perimeter_all)
+summary(perimeter_reg_ir)
+
+perimeter_reg_ir_nospecies <- lmer(per_i ~ per_r + (1 | individual_id), data = perimeter_all)
+summary(perimeter_reg_ir_nospecies)
+```
+
+
+```{r surf-models}
+surf_reg_ir <- lmer(surf_i ~ surf_r * species + (1 | individual_id), data = surf_all)
+summary(surf_reg_ir)
+
+surf_reg_ir_nospecies <- lmer(surf_i ~ surf_r + (1 | individual_id), data = surf_all)
+summary(surf_reg_ir_nospecies)
+```
+
+
+```{r tdmc-models}
+tdmc_reg_ir <- lmer(weight_i ~ weight_r * species + (1 | individual_id), data = tdmc_all)
+summary(tdmc_reg_ir)
+
+tdmc_reg_ir_nospecies <- lmer(weight_i ~ weight_r + (1 | individual_id), data = tdmc_all)
+summary(tdmc_reg_ir_nospecies)
+
+```
+
+```{r thick-models}
+thick_reg_ir <- lmer(thick_i ~ thick_r * species + (1 | individual_id), data = thickness_all)
+summary(thick_reg_ir)
+
+thick_reg_ir_nospecies <- lmer(thick_i ~ thick_r + (1 | individual_id), data = thickness_all)
+summary(thick_reg_ir_nospecies)
+```
+
+
+```{r volume-models}
+volume_reg_ir <- lmer(vol_i ~ vol_r * species + (1 | individual_id), data = volume_all)
+summary(volume_reg_ir)
+
+volume_reg_ir_nospecies <- lmer(vol_i ~ vol_r + (1 | individual_id), data = volume_all)
+summary(volume_reg_ir_nospecies)
+```
+
+
+
+#Compare models using AIC;species & no species for Initial and Rehydrate
+```{r height-AIC}
+model.sel(height_reg_ir, height_reg_ir_nospecies)
+#nospecies is better
+```
+
+```{r width-AIC}
+model.sel(width_reg_ir, width_reg_ir_nospecies)
+#nospecies is better
+```
+
+```{r perimeter-AIC}
+model.sel(perimeter_reg_ir, perimeter_reg_ir_nospecies)
+#with species is better
+```
+
+```{r surf-AIC}
+
+model.sel(surf_reg_ir, surf_reg_ir_nospecies)
+#species is better
+```
+
+```{r tdmc-AIC}
+model.sel(tdmc_reg_ir, tdmc_reg_ir_nospecies)
+#species is better
+```
+
+```{r thick-AIC}
+model.sel(thick_reg_ir, thick_reg_ir_nospecies)
+#nospecies is better, but doesn't really matter cause it's not a good predictor
+```
+
+```{r volume-AIC}
+model.sel(volume_reg_ir, volume_reg_ir_nospecies)
+#with species is better
+```
+
+
+
+#Calculating R^2 Values for the better models
+```{r r^2-height}
+MuMIn::r.squaredGLMM(height_reg_ir_nospecies)
+```
+
+```{r r^2-width}
+MuMIn::r.squaredGLMM(width_reg_ir_nospecies)
+
+```
+
+```{r r2-perimeter}
+MuMIn::r.squaredGLMM(perimeter_reg_ir)
+```
+
+```{r r2-surf}
+MuMIn::r.squaredGLMM(surf_reg_ir)
+
+```
+
+```{r r2-tdmc}
+MuMIn::r.squaredGLMM(tdmc_reg_ir)
+```
+
+```{r r2-thick}
+MuMIn::r.squaredGLMM(thick_reg_ir_nospecies)
+```
+
+```{r r2-volume}
+MuMIn::r.squaredGLMM(volume_reg_ir)
+```
+
+
+
+#Save rehydration predictions as an object using ggpredict (so we can plot later)
+```{r rehydrate_height - predictions}
+height_ir_predictions <- ggpredict(height_reg_ir_nospecies, terms = "height_r[0:45]") %>% 
+  mutate(trait = "height")
+
+height_ir_predictions
+```
+
+```{r rehydrate_width - predictions}
+width_ir_predictions <- ggpredict(width_reg_ir_nospecies, terms = "width_r[0:30]") %>% #max width = 24
+  mutate(trait = "width") 
+
+# look at the data frame
+width_ir_predictions
+
+```
+
+```{r rehydrate_perimeter - predictions}
+perimeter_ir_predictions <- ggpredict(perimeter_reg_ir, terms = "per_r[0:375]") %>% 
+  mutate(trait = "perimeter")
+
+perimeter_ir_predictions_species <- ggpredict(perimeter_reg_ir, terms = c("per_r", "species")) %>% 
+  as_tibble() %>% 
+  rename(species = group)
+# look at the data frame
+perimeter_ir_predictions
+```
+
+```{r rehydrate_surf - predictions}
+surf_ir_predictions <- ggpredict(surf_reg_ir, terms = "surf_r[0:430]") %>% 
+  mutate(trait = "surface area")
+
+surf_ir_predictions_species <- ggpredict(surf_reg_ir, terms = c("surf_r", "species")) %>% 
+  as_tibble() %>% 
+  rename(species = group)
+# look at the data frame
+surf_ir_predictions
+```
+
+```{r rehydrate_tdmc - predictions fig.width = 20, fig.height = 10}
+tdmc_ir_predictions <- ggpredict(tdmc_reg_ir, terms = "weight_r[0:29050]") %>% 
+  as_tibble() %>% 
+  mutate(trait = "thallus dry matter content")
+
+tdmc_ir_predictions_species <- ggpredict(tdmc_reg_ir, terms = c("weight_r", "species")) %>% 
+  as_tibble() %>% 
+  rename(species = group)
+# look at the data frame
+tdmc_ir_predictions
+
+```
+
+```{r rehydrate_thick - prediction}
+thick_ir_predictions <- ggpredict(thick_reg_ir_nospecies, terms = "thick_r[0:2]")  %>% 
+  mutate(trait = "thickness")
+
+# look at the data frame
+thick_ir_predictions
+
+```
+
+```{r rehydrate_volume - prediction}
+volume_ir_predictions <- ggpredict(volume_reg_ir, terms = "vol_r[0:30]") %>% 
+  mutate(trait = "volume")
+
+volume_ir_predictions_species <- ggpredict(volume_reg_ir, terms = c("vol_r", "species")) %>% 
+  as_tibble() %>% 
+  rename(species = group)
+# look at the data frame
+volume_ir_predictions
+
+```
+
+
+#Visualize the rehydrate models without species
+```{r rehydrate_height - PLOT}
+height_ir_plot <- ggplot() +
+  
+  # plot the raw data as points
+  geom_point(data = height_all,
+             aes(x = height_r,
+                 y = height_i),
+             alpha = 0.5,
+             color = model_col,
+             shape = 21) +
+  
+  # plot a 1:1 reference line
+  geom_abline(slope = 1, 
+              intercept = 0,
+              linetype = 2,
+              linewidth = 1,
+              color = ref_line_col) +
+  
+  # plot the confidence interval 
+  geom_ribbon(data = height_ir_predictions,
+              aes(x = x,
+                  y = predicted,
+                  ymin = conf.low,
+                  ymax = conf.high),
+              alpha = 0.2,
+              fill = model_col) +
+  
+  # plot the prediction line
+  geom_line(data = height_ir_predictions,
+            aes(x = x,
+                y = predicted),
+            color = model_col,
+            linewidth = 1) +
+  
+  # labels
+  labs(x = "Rehydrate height (mm)",
+       y = "Initial height (mm)") +
+  
+  # controlling axes to make the plot look square
+  # this makes it easier to see the difference between the model and the 1:1 line
+  scale_x_continuous(breaks = seq(from = 0, to = 50, by = 10), 
+                     limits = c(0, 50)) +
+  scale_y_continuous(breaks = seq(from = 0, to = 50, by = 10), 
+                     limits = c(0, 50))+
+  #add equation + r squared
+   annotate("text", x = 10, y = 45, label= "y = 1.02x + 0.0407
+R squared = 0.996")
+  
+
+height_ir_plot
+```
