@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hayden Vega">
+<meta name="dcterms.date" content="2025-02-06">
+
+<title>HW 2 exploration</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="HW2-exploration_files/libs/clipboard/clipboard.min.js"></script>
+<script src="HW2-exploration_files/libs/quarto-html/quarto.js"></script>
+<script src="HW2-exploration_files/libs/quarto-html/popper.min.js"></script>
+<script src="HW2-exploration_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="HW2-exploration_files/libs/quarto-html/anchor.min.js"></script>
+<link href="HW2-exploration_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="HW2-exploration_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="HW2-exploration_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="HW2-exploration_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="HW2-exploration_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">HW 2 exploration</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hayden Vega </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 6, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="hw-2-exploration" class="level1">
+<h1>HW 2 Exploration</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggeffects)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjlabelled)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DHARMa)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parameters)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effects)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MuMIn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>#Load in data for each trait with individual ID delimiter</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>height_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"final_height.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">%&gt;%</span> <span class="fu">separate_wider_delim</span>(specimen_id, <span class="at">delim =</span> <span class="st">"-"</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"site"</span>, <span class="st">"individual"</span>, <span class="st">"specimen"</span>), <span class="at">cols_remove=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"individual_id"</span>, date<span class="sc">:</span>individual, <span class="at">remove =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>width_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"final_width.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">%&gt;%</span> <span class="fu">separate_wider_delim</span>(specimen_id, <span class="at">delim =</span> <span class="st">"-"</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"site"</span>, <span class="st">"individual"</span>, <span class="st">"specimen"</span>), <span class="at">cols_remove=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"individual_id"</span>, date<span class="sc">:</span>individual, <span class="at">remove =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>perimeter_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"final_perimeter.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">%&gt;%</span> <span class="fu">separate_wider_delim</span>(specimen_id, <span class="at">delim =</span> <span class="st">"-"</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"site"</span>, <span class="st">"individual"</span>, <span class="st">"specimen"</span>), <span class="at">cols_remove=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"individual_id"</span>, date<span class="sc">:</span>individual, <span class="at">remove =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>surf_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"final_surf.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">%&gt;%</span> <span class="fu">separate_wider_delim</span>(specimen_id, <span class="at">delim =</span> <span class="st">"-"</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"site"</span>, <span class="st">"individual"</span>, <span class="st">"specimen"</span>), <span class="at">cols_remove=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"individual_id"</span>, date<span class="sc">:</span>individual, <span class="at">remove =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>tdmc_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"final_tdmc.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">%&gt;%</span> <span class="fu">separate_wider_delim</span>(specimen_id, <span class="at">delim =</span> <span class="st">"-"</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"site"</span>, <span class="st">"individual"</span>, <span class="st">"specimen"</span>), <span class="at">cols_remove=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"individual_id"</span>, date<span class="sc">:</span>individual, <span class="at">remove =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>thickness_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"final_thickness.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">%&gt;%</span> <span class="fu">separate_wider_delim</span>(specimen_id, <span class="at">delim =</span> <span class="st">"-"</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"site"</span>, <span class="st">"individual"</span>, <span class="st">"specimen"</span>), <span class="at">cols_remove=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"individual_id"</span>, date<span class="sc">:</span>individual, <span class="at">remove =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>volume_all <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"final_volume.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">%&gt;%</span> <span class="fu">separate_wider_delim</span>(specimen_id, <span class="at">delim =</span> <span class="st">"-"</span>, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"site"</span>, <span class="st">"individual"</span>, <span class="st">"specimen"</span>), <span class="at">cols_remove=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(<span class="st">"individual_id"</span>, date<span class="sc">:</span>individual, <span class="at">remove =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">"-"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot theme</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># abline color</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ref_line_col <span class="ot">&lt;-</span> <span class="st">"grey"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># model prediction color</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>model_col <span class="ot">&lt;-</span> <span class="st">"darkblue"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>#Create multiple regression for each trait - initial &amp; rehydrate WITH &amp; WITHOUT species</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>height_reg_ir <span class="ot">&lt;-</span> <span class="fu">lmer</span>(height_i <span class="sc">~</span> height_r <span class="sc">*</span> species <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> height_all)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(height_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: height_i ~ height_r * species + (1 | individual_id)
+   Data: height_all
+
+REML criterion at convergence: 340
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.6509 -0.3732 -0.0226  0.3021  4.4958 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 0.1333   0.3651  
+ Residual                  0.2681   0.5177  
+Number of obs: 164, groups:  individual_id, 53
+
+Fixed effects:
+                       Estimate Std. Error t value
+(Intercept)           -0.274352   0.430529  -0.637
+height_r               1.028963   0.026128  39.382
+speciesCC              0.637961   0.606623   1.052
+speciesCO              0.641408   0.642609   0.998
+speciesCYOS            0.724493   0.702055   1.032
+speciesDL            -20.260452   5.828439  -3.476
+speciesDP              0.351866   0.553445   0.636
+speciesEGME            0.107424   0.519428   0.207
+speciesGR              1.166756   1.505149   0.775
+speciesNAND            0.218399   0.737430   0.296
+speciesPOLA           -0.007120   0.856326  -0.008
+speciesR               0.577393   0.588258   0.982
+height_r:speciesCC    -0.053726   0.032008  -1.679
+height_r:speciesCO    -0.057237   0.057285  -0.999
+height_r:speciesCYOS  -0.013844   0.031444  -0.440
+height_r:speciesDL     0.783293   0.222050   3.528
+height_r:speciesDP     0.023550   0.032345   0.728
+height_r:speciesEGME   0.009231   0.029182   0.316
+height_r:speciesGR    -0.054982   0.069699  -0.789
+height_r:speciesNAND   0.017202   0.055752   0.309
+height_r:speciesPOLA   0.003428   0.054532   0.063
+height_r:speciesR     -0.046990   0.042020  -1.118</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>height_reg_ir_nospecies <span class="ot">&lt;-</span> <span class="fu">lmer</span>(height_i <span class="sc">~</span> height_r <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> height_all)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(height_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: height_i ~ height_r + (1 | individual_id)
+   Data: height_all
+
+REML criterion at convergence: 339.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.6335 -0.4675 -0.0680  0.3750  4.5944 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 0.1994   0.4465  
+ Residual                  0.3103   0.5570  
+Number of obs: 164, groups:  individual_id, 53
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept) 0.040655   0.136837   0.297
+height_r    1.023868   0.006802 150.514
+
+Correlation of Fixed Effects:
+         (Intr)
+height_r -0.831</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>width_reg_ir <span class="ot">&lt;-</span> <span class="fu">lmer</span>(width_i <span class="sc">~</span> width_r <span class="sc">*</span> species <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> width_all)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>width_reg_ir_nospecies <span class="ot">&lt;-</span> <span class="fu">lmer</span>(width_i <span class="sc">~</span> width_r <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> width_all)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(width_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: width_i ~ width_r + (1 | individual_id)
+   Data: width_all
+
+REML criterion at convergence: -38.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.0894 -0.3833 -0.1711  0.4370  5.3312 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 0.00000  0.0000  
+ Residual                  0.04256  0.2063  
+Number of obs: 162, groups:  individual_id, 54
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept) 0.086453   0.025017   3.456
+width_r     0.993936   0.004949 200.819
+
+Correlation of Fixed Effects:
+        (Intr)
+width_r -0.762
+optimizer (nloptwrap) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>perimeter_reg_ir <span class="ot">&lt;-</span> <span class="fu">lmer</span>(per_i <span class="sc">~</span> per_r <span class="sc">*</span> species <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> perimeter_all)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(perimeter_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: per_i ~ per_r * species + (1 | individual_id)
+   Data: perimeter_all
+
+REML criterion at convergence: 1298.3
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4623 -0.1754 -0.0524  0.1051  5.7167 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept)  95.52    9.774  
+ Residual                  317.46   17.817  
+Number of obs: 153, groups:  individual_id, 52
+
+Fixed effects:
+                   Estimate Std. Error t value
+(Intercept)        11.94377    9.72785   1.228
+per_r               0.89901    0.06292  14.289
+speciesCC         -12.00315   14.14248  -0.849
+speciesCO         -13.67406   16.07381  -0.851
+speciesCYOS        -6.27899   15.71169  -0.400
+speciesDP          -1.15338   13.35059  -0.086
+speciesEGME       -10.09572   14.24611  -0.709
+speciesGR          -7.51742   16.61084  -0.453
+speciesNAND       -29.82349   34.36413  -0.868
+speciesPOLA       188.18674   27.83589   6.761
+speciesR          -10.42931   13.45056  -0.775
+per_r:speciesCC     0.12080    0.13574   0.890
+per_r:speciesCO     0.13346    0.13865   0.963
+per_r:speciesCYOS   0.10090    0.08751   1.153
+per_r:speciesDP     0.17766    0.07971   2.229
+per_r:speciesEGME   0.06577    0.20012   0.329
+per_r:speciesGR     0.09556    0.11385   0.839
+per_r:speciesNAND   0.35021    0.22788   1.537
+per_r:speciesPOLA  -1.04870    0.13015  -8.058
+per_r:speciesR      0.09930    0.10495   0.946</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>perimeter_reg_ir_nospecies <span class="ot">&lt;-</span> <span class="fu">lmer</span>(per_i <span class="sc">~</span> per_r <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> perimeter_all)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(perimeter_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: per_i ~ per_r + (1 | individual_id)
+   Data: perimeter_all
+
+REML criterion at convergence: 1434.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-5.3939 -0.2103 -0.1346  0.0058  4.3400 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept)  72.39    8.508  
+ Residual                  627.45   25.049  
+Number of obs: 153, groups:  individual_id, 52
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  5.56937    4.08128   1.365
+per_r        1.00652    0.02865  35.138
+
+Correlation of Fixed Effects:
+      (Intr)
+per_r -0.814</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>surf_reg_ir <span class="ot">&lt;-</span> <span class="fu">lmer</span>(surf_i <span class="sc">~</span> surf_r <span class="sc">*</span> species <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> surf_all)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(surf_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: surf_i ~ surf_r * species + (1 | individual_id)
+   Data: surf_all
+
+REML criterion at convergence: 1188.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.1047 -0.1974  0.0000  0.1264  7.5343 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept)  81.54    9.03   
+ Residual                  117.26   10.83   
+Number of obs: 155, groups:  individual_id, 52
+
+Fixed effects:
+                   Estimate Std. Error t value
+(Intercept)        -1.58126    7.81026  -0.202
+surf_r              1.12908    0.08684  13.002
+speciesCC          15.42369    9.77328   1.578
+speciesCO           0.89677   10.38244   0.086
+speciesCYOS         3.29739   11.49479   0.287
+speciesDP           9.75021    9.20383   1.059
+speciesEGME         2.18597    9.97535   0.219
+speciesGR          -1.55355   15.32926  -0.101
+speciesNAND        -3.82483   16.69643  -0.229
+speciesPOLA        -4.48724   20.82619  -0.215
+speciesR            0.15977   10.70600   0.015
+surf_r:speciesCC   -0.16124    0.08978  -1.796
+surf_r:speciesCO    0.05879    0.48435   0.121
+surf_r:speciesCYOS  0.01105    0.13090   0.084
+surf_r:speciesDP    0.10850    0.09911   1.095
+surf_r:speciesEGME -0.10908    0.12497  -0.873
+surf_r:speciesGR    0.01837    0.17066   0.108
+surf_r:speciesNAND  0.25954    0.34672   0.749
+surf_r:speciesPOLA -0.04449    0.17205  -0.259
+surf_r:speciesR    -0.02750    0.15965  -0.172</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>surf_reg_ir_nospecies <span class="ot">&lt;-</span> <span class="fu">lmer</span>(surf_i <span class="sc">~</span> surf_r <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> surf_all)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(surf_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: surf_i ~ surf_r + (1 | individual_id)
+   Data: surf_all
+
+REML criterion at convergence: 1273
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2860 -0.2405 -0.0934  0.1431  7.0725 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 164.2    12.82   
+ Residual                  128.3    11.33   
+Number of obs: 155, groups:  individual_id, 52
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  8.15738    2.38648   3.418
+surf_r       1.03768    0.01904  54.505
+
+Correlation of Fixed Effects:
+       (Intr)
+surf_r -0.534</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>tdmc_reg_ir <span class="ot">&lt;-</span> <span class="fu">lmer</span>(weight_i <span class="sc">~</span> weight_r <span class="sc">*</span> species <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> tdmc_all)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(tdmc_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: weight_i ~ weight_r * species + (1 | individual_id)
+   Data: tdmc_all
+
+REML criterion at convergence: 2556.8
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2441 -0.2221 -0.0195  0.2035  7.5446 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept)       0     0    
+ Residual                  1382191  1176    
+Number of obs: 159, groups:  individual_id, 55
+
+Fixed effects:
+                       Estimate Std. Error t value
+(Intercept)          -859.71069  389.57350  -2.207
+weight_r                1.80897    0.03927  46.061
+speciesCC            1948.48497  582.33898   3.346
+speciesCO             796.50963  592.86217   1.343
+speciesCYOS          1548.97927  816.97129   1.896
+speciesDP             826.85381  515.37765   1.604
+speciesEGME           983.09662  599.62798   1.640
+speciesGR            -290.19721  917.05077  -0.316
+speciesNAND           898.08911 1658.39242   0.542
+speciesPOLA           672.30438 1364.35381   0.493
+speciesR              885.35159  604.43919   1.465
+weight_r:speciesCC     -0.81629    0.05323 -15.335
+weight_r:speciesCO     -0.50096    0.55557  -0.902
+weight_r:speciesCYOS    0.61326    0.34120   1.797
+weight_r:speciesDP      0.74481    0.17310   4.303
+weight_r:speciesEGME   -0.30748    0.58338  -0.527
+weight_r:speciesGR     -0.08245    0.09342  -0.883
+weight_r:speciesNAND   -0.27214    1.17642  -0.231
+weight_r:speciesPOLA   -0.35454    0.62942  -0.563
+weight_r:speciesR      -0.44324    0.23046  -1.923</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>fit warnings:
+Some predictor variables are on very different scales: consider rescaling
+optimizer (nloptwrap) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>tdmc_reg_ir_nospecies <span class="ot">&lt;-</span> <span class="fu">lmer</span>(weight_i <span class="sc">~</span> weight_r <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> tdmc_all)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(tdmc_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: weight_i ~ weight_r + (1 | individual_id)
+   Data: tdmc_all
+
+REML criterion at convergence: 2907
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.0646 -0.1959 -0.1068  0.1539  6.4238 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 2316648  1522    
+ Residual                  3891255  1973    
+Number of obs: 159, groups:  individual_id, 55
+
+Fixed effects:
+             Estimate Std. Error t value
+(Intercept) 832.53896  295.38612   2.818
+weight_r      1.39800    0.04207  33.228
+
+Correlation of Fixed Effects:
+         (Intr)
+weight_r -0.459
+fit warnings:
+Some predictor variables are on very different scales: consider rescaling</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>thick_reg_ir <span class="ot">&lt;-</span> <span class="fu">lmer</span>(thick_i <span class="sc">~</span> thick_r <span class="sc">*</span> species <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> thickness_all)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(thick_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: thick_i ~ thick_r * species + (1 | individual_id)
+   Data: thickness_all
+
+REML criterion at convergence: -96.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2260 -0.1919 -0.0432  0.0915  7.2546 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 0.04666  0.2160  
+ Residual                  0.01759  0.1326  
+Number of obs: 162, groups:  individual_id, 53
+
+Fixed effects:
+                     Estimate Std. Error t value
+(Intercept)          0.120542   0.114638   1.052
+thick_r              0.139866   0.320579   0.436
+speciesCC            0.010940   0.220029   0.050
+speciesCO            0.363711   0.331424   1.097
+speciesCYOS          0.457297   0.237785   1.923
+speciesDL            0.049458   0.459266   0.108
+speciesDP            0.124849   0.222560   0.561
+speciesEGME          0.001116   0.220785   0.005
+speciesGR            0.360171   1.022235   0.352
+speciesNAND          0.059782   0.373055   0.160
+speciesPOLA          0.045172   1.568954   0.029
+speciesR            -0.102688   0.194661  -0.528
+thick_r:speciesCC    0.616505   0.480729   1.282
+thick_r:speciesCO   -0.029348   0.664557  -0.044
+thick_r:speciesCYOS  0.198255   0.886893   0.224
+thick_r:speciesDL   -0.139866   2.330202  -0.060
+thick_r:speciesDP    0.495902   1.270180   0.390
+thick_r:speciesEGME  0.281383   1.275901   0.221
+thick_r:speciesGR    0.673354   0.797153   0.845
+thick_r:speciesNAND -0.263202   1.800285  -0.146
+thick_r:speciesPOLA -0.497009  14.474206  -0.034
+thick_r:speciesR     0.765868   0.655984   1.168</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>thick_reg_ir_nospecies <span class="ot">&lt;-</span> <span class="fu">lmer</span>(thick_i <span class="sc">~</span> thick_r <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> thickness_all)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(thick_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: thick_i ~ thick_r + (1 | individual_id)
+   Data: thickness_all
+
+REML criterion at convergence: -63.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2443 -0.2138 -0.0588  0.1191  7.2879 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 0.05910  0.2431  
+ Residual                  0.01742  0.1320  
+Number of obs: 162, groups:  individual_id, 53
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  0.13422    0.04655   2.883
+thick_r      0.92174    0.08979  10.266
+
+Correlation of Fixed Effects:
+        (Intr)
+thick_r -0.656</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>volume_reg_ir <span class="ot">&lt;-</span> <span class="fu">lmer</span>(vol_i <span class="sc">~</span> vol_r <span class="sc">*</span> species <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> volume_all)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(volume_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: vol_i ~ vol_r * species + (1 | individual_id)
+   Data: volume_all
+
+REML criterion at convergence: 680.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.1113 -0.2169 -0.0116  0.2568  4.1150 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 1.765    1.329   
+ Residual                  3.864    1.966   
+Number of obs: 162, groups:  individual_id, 53
+
+Fixed effects:
+                  Estimate Std. Error t value
+(Intercept)        1.30390    0.88276   1.477
+vol_r              1.43146    0.06500  22.022
+speciesCC          0.09332    1.30665   0.071
+speciesCO         -1.05684    1.30904  -0.807
+speciesCYOS        0.72007    1.50989   0.477
+speciesDL          4.19610    5.94891   0.705
+speciesDP         -0.04726    1.13820  -0.042
+speciesEGME       -0.97200    1.28596  -0.756
+speciesGR         -3.05725    2.23710  -1.367
+speciesNAND       -1.15642    2.09422  -0.552
+speciesPOLA       -1.11325    2.86861  -0.388
+speciesR          -0.78440    1.38258  -0.567
+vol_r:speciesCC   -0.52246    0.09625  -5.428
+vol_r:speciesCO   -0.69817    1.14178  -0.611
+vol_r:speciesCYOS  0.17432    0.51313   0.340
+vol_r:speciesDL   -1.93146    2.40841  -0.802
+vol_r:speciesDP    0.37187    0.28946   1.285
+vol_r:speciesEGME -0.55641    0.79461  -0.700
+vol_r:speciesGR   -0.02982    0.20193  -0.148
+vol_r:speciesNAND  0.69625    1.54659   0.450
+vol_r:speciesPOLA -0.02907    1.19204  -0.024
+vol_r:speciesR    -0.28390    0.51591  -0.550</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>volume_reg_ir_nospecies <span class="ot">&lt;-</span> <span class="fu">lmer</span>(vol_i <span class="sc">~</span> vol_r <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> individual_id), <span class="at">data =</span> volume_all)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(volume_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: vol_i ~ vol_r + (1 | individual_id)
+   Data: volume_all
+
+REML criterion at convergence: 770.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.9613 -0.3012 -0.1227  0.2502  5.3131 
+
+Random effects:
+ Groups        Name        Variance Std.Dev.
+ individual_id (Intercept) 2.812    1.677   
+ Residual                  4.812    2.194   
+Number of obs: 162, groups:  individual_id, 53
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)  1.15637    0.32749   3.531
+vol_r        1.21440    0.04462  27.216
+
+Correlation of Fixed Effects:
+      (Intr)
+vol_r -0.459</code></pre>
+</div>
+</div>
+<p>#Compare models using AIC;species &amp; no species for Initial and Rehydrate</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model.sel</span>(height_reg_ir, height_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model selection table 
+                           (Int) hgh_r spc hgh_r:spc df   logLik  AICc delta
+height_reg_ir_nospecies  0.04065 1.024                4 -169.859 348.0  0.00
+height_reg_ir           -0.27440 1.029   +         + 24 -169.996 396.6 48.66
+                        weight
+height_reg_ir_nospecies      1
+height_reg_ir                0
+Models ranked by AICc(x) 
+Random terms (all models): 
+  1 | individual_id</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#nospecies is better</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model.sel</span>(width_reg_ir, width_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model selection table 
+                         (Int) spc  wdt_r spc:wdt_r df logLik  AICc  delta
+width_reg_ir_nospecies 0.08645     0.9939            4 19.245 -30.2   0.00
+width_reg_ir           0.00229   + 1.0300         + 24 -8.349  73.5 103.69
+                       weight
+width_reg_ir_nospecies      1
+width_reg_ir                0
+Models ranked by AICc(x) 
+Random terms (all models): 
+  1 | individual_id</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#nospecies is better</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model.sel</span>(perimeter_reg_ir, perimeter_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model selection table 
+                            (Int) per_r spc per_r:spc df   logLik   AICc delta
+perimeter_reg_ir           11.940 0.899   +         + 22 -649.166 1350.1  0.00
+perimeter_reg_ir_nospecies  5.569 1.007                4 -717.235 1442.7 92.62
+                           weight
+perimeter_reg_ir                1
+perimeter_reg_ir_nospecies      0
+Models ranked by AICc(x) 
+Random terms (all models): 
+  1 | individual_id</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#with species is better</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model.sel</span>(surf_reg_ir, surf_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model selection table 
+                       (Int) spc srf_r spc:srf_r df   logLik   AICc delta
+surf_reg_ir           -1.581   + 1.129         + 22 -594.245 1240.2  0.00
+surf_reg_ir_nospecies  8.157     1.038            4 -636.504 1281.3 41.12
+                      weight
+surf_reg_ir                1
+surf_reg_ir_nospecies      0
+Models ranked by AICc(x) 
+Random terms (all models): 
+  1 | individual_id</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#species is better</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model.sel</span>(tdmc_reg_ir, tdmc_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model selection table 
+                       (Int) spc wgh_r spc:wgh_r df    logLik   AICc  delta
+tdmc_reg_ir           -859.7   + 1.809         + 22 -1278.379 2608.2   0.00
+tdmc_reg_ir_nospecies  832.5     1.398            4 -1453.517 2915.3 307.09
+                      weight
+tdmc_reg_ir                1
+tdmc_reg_ir_nospecies      0
+Models ranked by AICc(x) 
+Random terms (all models): 
+  1 | individual_id</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#species is better</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model.sel</span>(thick_reg_ir, thick_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model selection table 
+                        (Int) spc  thc_r spc:thc_r df logLik  AICc delta weight
+thick_reg_ir_nospecies 0.1342     0.9217            4 31.946 -55.6  0.00      1
+thick_reg_ir           0.1205   + 0.1399         + 24 48.267 -39.8 15.86      0
+Models ranked by AICc(x) 
+Random terms (all models): 
+  1 | individual_id</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#nospecies is better, but doesn't really matter cause it's not a good predictor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">model.sel</span>(volume_reg_ir, volume_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model selection table 
+                        (Int) spc vol_r spc:vol_r df   logLik  AICc delta
+volume_reg_ir           1.304   + 1.431         + 24 -340.348 737.5  0.00
+volume_reg_ir_nospecies 1.156     1.214            4 -385.284 778.8 41.37
+                        weight
+volume_reg_ir                1
+volume_reg_ir_nospecies      0
+Models ranked by AICc(x) 
+Random terms (all models): 
+  1 | individual_id</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">#with species is better</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>#Calculating R^2 Values for the better models</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>MuMIn<span class="sc">::</span><span class="fu">r.squaredGLMM</span>(height_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           R2m       R2c
+[1,] 0.9933504 0.9959516</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>MuMIn<span class="sc">::</span><span class="fu">r.squaredGLMM</span>(width_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           R2m       R2c
+[1,] 0.9960237 0.9960237</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>MuMIn<span class="sc">::</span><span class="fu">r.squaredGLMM</span>(perimeter_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           R2m       R2c
+[1,] 0.9417458 0.9552199</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>MuMIn<span class="sc">::</span><span class="fu">r.squaredGLMM</span>(surf_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           R2m       R2c
+[1,] 0.9630645 0.9782143</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>MuMIn<span class="sc">::</span><span class="fu">r.squaredGLMM</span>(tdmc_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           R2m       R2c
+[1,] 0.9728602 0.9728602</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>MuMIn<span class="sc">::</span><span class="fu">r.squaredGLMM</span>(thick_reg_ir_nospecies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           R2m       R2c
+[1,] 0.4802988 0.8816962</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>MuMIn<span class="sc">::</span><span class="fu">r.squaredGLMM</span>(volume_reg_ir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           R2m       R2c
+[1,] 0.8780037 0.9162553</code></pre>
+</div>
+</div>
+<p>#Save rehydration predictions as an object using ggpredict (so we can plot later)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>height_ir_predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(height_reg_ir_nospecies, <span class="at">terms =</span> <span class="st">"height_r[0:45]"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trait =</span> <span class="st">"height"</span>)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>height_ir_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Predicted values of height_i
+
+height_r | Predicted |      95% CI |  trait
+-------------------------------------------
+       0 |      0.04 | -0.23, 0.31 | height
+       1 |      1.06 |  0.81, 1.32 | height
+       2 |      2.09 |  1.84, 2.34 | height
+       3 |      3.11 |  2.87, 3.35 | height
+       4 |      4.14 |  3.91, 4.36 | height
+       5 |      5.16 |  4.94, 5.38 | height
+       6 |      6.18 |  5.98, 6.39 | height
+
+Adjusted for:
+* individual_id = 0 (population-level)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>width_ir_predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(width_reg_ir_nospecies, <span class="at">terms =</span> <span class="st">"width_r[0:30]"</span>) <span class="sc">%&gt;%</span> <span class="co">#max width = 24</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trait =</span> <span class="st">"width"</span>) </span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the data frame</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>width_ir_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Predicted values of width_i
+
+width_r | Predicted |     95% CI | trait
+----------------------------------------
+      0 |      0.09 | 0.04, 0.14 | width
+      1 |      1.08 | 1.04, 1.12 | width
+      2 |      2.07 | 2.04, 2.11 | width
+      3 |      3.07 | 3.04, 3.10 | width
+      4 |      4.06 | 4.03, 4.09 | width
+      5 |      5.06 | 5.02, 5.09 | width
+      6 |      6.05 | 6.01, 6.09 | width
+
+Adjusted for:
+* individual_id = 0 (population-level)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>perimeter_ir_predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(perimeter_reg_ir, <span class="at">terms =</span> <span class="st">"per_r[0:375]"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trait =</span> <span class="st">"perimeter"</span>)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>perimeter_ir_predictions_species <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(perimeter_reg_ir, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"per_r"</span>, <span class="st">"species"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">species =</span> group)</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the data frame</span></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>perimeter_ir_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Predicted values of per_i
+
+per_r | Predicted |       95% CI |     trait
+--------------------------------------------
+    0 |     11.94 | -7.30, 31.19 | perimeter
+    1 |     12.84 | -6.30, 31.99 | perimeter
+    2 |     13.74 | -5.30, 32.79 | perimeter
+    3 |     14.64 | -4.30, 33.59 | perimeter
+    4 |     15.54 | -3.31, 34.39 | perimeter
+    5 |     16.44 | -2.31, 35.19 | perimeter
+    6 |     17.34 | -1.31, 35.99 | perimeter
+
+Adjusted for:
+*       species = BF
+* individual_id = 0 (population-level)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>surf_ir_predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(surf_reg_ir, <span class="at">terms =</span> <span class="st">"surf_r[0:430]"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trait =</span> <span class="st">"surface area"</span>)</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>surf_ir_predictions_species <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(surf_reg_ir, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"surf_r"</span>, <span class="st">"species"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">species =</span> group)</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the data frame</span></span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>surf_ir_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Predicted values of surf_i
+
+surf_r | Predicted |        95% CI |        trait
+-------------------------------------------------
+     0 |     -1.58 | -17.03, 13.87 | surface area
+     1 |     -0.45 | -15.76, 14.86 | surface area
+     2 |      0.68 | -14.49, 15.85 | surface area
+     3 |      1.81 | -13.22, 16.84 | surface area
+     4 |      2.94 | -11.96, 17.83 | surface area
+     5 |      4.06 | -10.69, 18.82 | surface area
+     6 |      5.19 |  -9.42, 19.81 | surface area
+
+Adjusted for:
+*       species = BF
+* individual_id = 0 (population-level)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>tdmc_ir_predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(tdmc_reg_ir, <span class="at">terms =</span> <span class="st">"weight_r[0:29050]"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trait =</span> <span class="st">"thallus dry matter content"</span>)</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>tdmc_ir_predictions_species <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(tdmc_reg_ir, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"weight_r"</span>, <span class="st">"species"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">species =</span> group)</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the data frame</span></span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>tdmc_ir_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29,051 × 7
+       x predicted std.error conf.low conf.high group trait                     
+   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;fct&gt; &lt;chr&gt;                     
+ 1     0     -860.      390.   -1630.     -89.4 1     thallus dry matter content
+ 2     1     -858.      390.   -1628.     -87.6 1     thallus dry matter content
+ 3     2     -856.      390.   -1626.     -85.8 1     thallus dry matter content
+ 4     3     -854.      389.   -1624.     -84.1 1     thallus dry matter content
+ 5     4     -852.      389.   -1623.     -82.3 1     thallus dry matter content
+ 6     5     -851.      389.   -1621.     -80.6 1     thallus dry matter content
+ 7     6     -849.      389.   -1619.     -78.8 1     thallus dry matter content
+ 8     7     -847.      389.   -1617.     -77.1 1     thallus dry matter content
+ 9     8     -845.      389.   -1615.     -75.3 1     thallus dry matter content
+10     9     -843.      389.   -1613.     -73.6 1     thallus dry matter content
+# ℹ 29,041 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>thick_ir_predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(thick_reg_ir_nospecies, <span class="at">terms =</span> <span class="st">"thick_r[0:2]"</span>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trait =</span> <span class="st">"thickness"</span>)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the data frame</span></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>thick_ir_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Predicted values of thick_i
+
+: 1
+
+thick_r | Predicted |     95% CI |     trait
+--------------------------------------------
+      0 |      0.13 | 0.04, 0.23 | thickness
+      1 |      1.06 | 0.92, 1.19 | thickness
+      2 |      1.98 | 1.68, 2.28 | thickness
+
+Adjusted for:
+* individual_id = 0 (population-level)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>volume_ir_predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(volume_reg_ir, <span class="at">terms =</span> <span class="st">"vol_r[0:30]"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trait =</span> <span class="st">"volume"</span>)</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>volume_ir_predictions_species <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(volume_reg_ir, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"vol_r"</span>, <span class="st">"species"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">species =</span> group)</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the data frame</span></span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>volume_ir_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Predicted values of vol_i
+
+vol_r | Predicted |       95% CI |  trait
+-----------------------------------------
+    0 |      1.30 | -0.44,  3.05 | volume
+    1 |      2.74 |  1.06,  4.41 | volume
+    2 |      4.17 |  2.56,  5.77 | volume
+    3 |      5.60 |  4.05,  7.15 | volume
+    4 |      7.03 |  5.53,  8.53 | volume
+    5 |      8.46 |  7.00,  9.92 | volume
+    6 |      9.89 |  8.46, 11.33 | volume
+
+Adjusted for:
+*       species = BF
+* individual_id = 0 (population-level)</code></pre>
+</div>
+</div>
+<p>#Visualize the rehydrate models without species</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>height_ir_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot the raw data as points</span></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> height_all,</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> height_r,</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> height_i),</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> model_col,</span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot a 1:1 reference line</span></span>
+<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, </span>
+<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">intercept =</span> <span class="dv">0</span>,</span>
+<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">linetype =</span> <span class="dv">2</span>,</span>
+<span id="cb80-15"><a href="#cb80-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">linewidth =</span> <span class="dv">1</span>,</span>
+<span id="cb80-16"><a href="#cb80-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> ref_line_col) <span class="sc">+</span></span>
+<span id="cb80-17"><a href="#cb80-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-18"><a href="#cb80-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot the confidence interval </span></span>
+<span id="cb80-19"><a href="#cb80-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> height_ir_predictions,</span>
+<span id="cb80-20"><a href="#cb80-20" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x,</span>
+<span id="cb80-21"><a href="#cb80-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> predicted,</span>
+<span id="cb80-22"><a href="#cb80-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ymin =</span> conf.low,</span>
+<span id="cb80-23"><a href="#cb80-23" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ymax =</span> conf.high),</span>
+<span id="cb80-24"><a href="#cb80-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.2</span>,</span>
+<span id="cb80-25"><a href="#cb80-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> model_col) <span class="sc">+</span></span>
+<span id="cb80-26"><a href="#cb80-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-27"><a href="#cb80-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot the prediction line</span></span>
+<span id="cb80-28"><a href="#cb80-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> height_ir_predictions,</span>
+<span id="cb80-29"><a href="#cb80-29" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> x,</span>
+<span id="cb80-30"><a href="#cb80-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> predicted),</span>
+<span id="cb80-31"><a href="#cb80-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> model_col,</span>
+<span id="cb80-32"><a href="#cb80-32" aria-hidden="true" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb80-33"><a href="#cb80-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-34"><a href="#cb80-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># labels</span></span>
+<span id="cb80-35"><a href="#cb80-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rehydrate height (mm)"</span>,</span>
+<span id="cb80-36"><a href="#cb80-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Initial height (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb80-37"><a href="#cb80-37" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-38"><a href="#cb80-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># controlling axes to make the plot look square</span></span>
+<span id="cb80-39"><a href="#cb80-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># this makes it easier to see the difference between the model and the 1:1 line</span></span>
+<span id="cb80-40"><a href="#cb80-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">10</span>), </span>
+<span id="cb80-41"><a href="#cb80-41" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>)) <span class="sc">+</span></span>
+<span id="cb80-42"><a href="#cb80-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="dv">10</span>), </span>
+<span id="cb80-43"><a href="#cb80-43" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">50</span>))<span class="sc">+</span></span>
+<span id="cb80-44"><a href="#cb80-44" aria-hidden="true" tabindex="-1"></a>  <span class="co">#add equation + r squared</span></span>
+<span id="cb80-45"><a href="#cb80-45" aria-hidden="true" tabindex="-1"></a>   <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">10</span>, <span class="at">y =</span> <span class="dv">45</span>, <span class="at">label=</span> <span class="st">"y = 1.02x + 0.0407</span></span>
+<span id="cb80-46"><a href="#cb80-46" aria-hidden="true" tabindex="-1"></a><span class="st">R squared = 0.996"</span>)</span>
+<span id="cb80-47"><a href="#cb80-47" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb80-48"><a href="#cb80-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-49"><a href="#cb80-49" aria-hidden="true" tabindex="-1"></a>height_ir_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="HW2-exploration_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="c-questions" class="level1">
+<h1>2c Questions</h1>
+<ol type="1">
+<li>I have learned that linear models vary in efficacy based on the incorporation of species.</li>
+<li>Yes, but I think I still need to review if my residuals look okay! I might have to restructure data, but I hope not. I’m still trying to think about what I want to say about my data. I want to create a summary figure, but I’m not sure what I should include.</li>
+<li>I think I’ll have a really hard time with my residual checks and creating a summary figure. I should go to office hours.</li>
+</ol>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
