@@ -8,7 +8,7 @@ output:
   pdf_document: default
 ---
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 install.packages("ggeffects")
 install.packages("DHARMa")
 install.packages("sjlabelled")
@@ -24,7 +24,7 @@ install.packages("effects")
 install.packages("MuMIn")
 ```
 
-```{r include=FALSE}
+```{r include=FALSE, warning=FALSE, message=FALSE}
 library(janitor)
 library(tidyverse)
 library(ggeffects)
@@ -39,7 +39,7 @@ library(MuMIn)
 
 
 #Load in data for each trait with individual ID delimiter
-```{r}
+```{r, warning=FALSE, message=FALSE}
 height_all <- read.csv("final_height.csv", header = TRUE, sep = ",") %>% separate_wider_delim(specimen_id, delim = "-", names = c("date", "site", "individual", "specimen"), cols_remove=FALSE) %>% 
   unite("individual_id", date:individual, remove = TRUE, sep = "-")
 
@@ -65,7 +65,7 @@ volume_all <- read.csv("final_volume.csv", header = TRUE, sep = ",") %>% separat
 
 ```
 
-```{r visualization-objects}
+```{r visualization-objects, warning=FALSE, message=FALSE}
 # ggplot theme
 theme_set(theme_bw() +
             theme(panel.grid = element_blank()))
@@ -79,7 +79,7 @@ model_col <- "darkblue"
 
 
 #Create multiple regression for each trait - initial & rehydrate WITH & WITHOUT species
-```{r height-models, include=FALSE}
+```{r height-models, include=FALSE, warning=FALSE, message=FALSE}
 
 height_reg_ir <- lmer(height_i ~ height_r * species + (1 | individual_id), data = height_all)
 summary(height_reg_ir)
@@ -88,7 +88,7 @@ height_reg_ir_nospecies <- lmer(height_i ~ height_r + (1 | individual_id), data 
 summary(height_reg_ir_nospecies)
 ```
 
-```{r width-models}
+```{r width-models, warning=FALSE, message=FALSE}
 width_reg_ir <- lmer(width_i ~ width_r * species + (1 | individual_id), data = width_all)
 
 
@@ -96,7 +96,7 @@ width_reg_ir_nospecies <- lmer(width_i ~ width_r + (1 | individual_id), data = w
 summary(width_reg_ir_nospecies)
 ```
 
-```{r perimeter-models}
+```{r perimeter-models, warning=FALSE, message=FALSE}
 perimeter_reg_ir <- lmer(per_i ~ per_r * species + (1 | individual_id), data = perimeter_all)
 summary(perimeter_reg_ir)
 
