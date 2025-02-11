@@ -1,7 +1,10 @@
 ---
-title: "HW 2 exploration"
+title: "HW2-exploration"
 author: "Hayden Vega"
-date: "2/6/25"
+date: 02/08/25
+format:
+  html:
+    embed-resources: true # this ensures that your rendered .html file is self-contained, so we (your instructors) can open it and view all your work
 ---
 
 # HW 2 Exploration
@@ -59,7 +62,7 @@ ref_line_col <- "grey"
 model_col <- "darkblue"
 ```
 
-#Create multiple regression for each trait - initial & rehydrate WITH & WITHOUT species
+#Create multiple regression for width, height - initial & rehydrate & herbarium WITH & WITHOUT species
 
 ```{r, warning=FALSE, message=FALSE}
 
@@ -70,55 +73,13 @@ height_reg_ir_nospecies <- lmer(height_i ~ height_r + (1 | individual_id), data 
 summary(height_reg_ir_nospecies)
 ```
 
-```{r width-models, warning=FALSE, message=FALSE }
-width_reg_ir <- lmer(width_i ~ width_r * species + (1 | individual_id), data = width_all)
+```{r, warning=FALSE, message=FALSE}
+width_reg_ih <- lmer(width_i ~ width_h * species + (1 | individual_id), data = width_all)
+summary(width_reg_ih)
 
-
-width_reg_ir_nospecies <- lmer(width_i ~ width_r + (1 | individual_id), data = width_all)
-summary(width_reg_ir_nospecies)
+width_reg_ih_nospecies <- lmer(width_i ~ width_h + (1 | individual_id), data = width_all)
+summary(width_reg_ih_nospecies)
 ```
-
-```{r perimeter-models, warning=FALSE, message=FALSE }
-perimeter_reg_ir <- lmer(per_i ~ per_r * species + (1 | individual_id), data = perimeter_all)
-summary(perimeter_reg_ir)
-
-perimeter_reg_ir_nospecies <- lmer(per_i ~ per_r + (1 | individual_id), data = perimeter_all)
-summary(perimeter_reg_ir_nospecies)
-```
-
-```{r surf-models, warning=FALSE, message=FALSE}
-surf_reg_ir <- lmer(surf_i ~ surf_r * species + (1 | individual_id), data = surf_all)
-summary(surf_reg_ir)
-
-surf_reg_ir_nospecies <- lmer(surf_i ~ surf_r + (1 | individual_id), data = surf_all)
-summary(surf_reg_ir_nospecies)
-```
-
-```{r tdmc-models, warning=FALSE, message=FALSE}
-tdmc_reg_ir <- lmer(weight_i ~ weight_r * species + (1 | individual_id), data = tdmc_all)
-summary(tdmc_reg_ir)
-
-tdmc_reg_ir_nospecies <- lmer(weight_i ~ weight_r + (1 | individual_id), data = tdmc_all)
-summary(tdmc_reg_ir_nospecies)
-
-```
-
-```{r thick-models, warning=FALSE, message=FALSE}
-thick_reg_ir <- lmer(thick_i ~ thick_r * species + (1 | individual_id), data = thickness_all)
-summary(thick_reg_ir)
-
-thick_reg_ir_nospecies <- lmer(thick_i ~ thick_r + (1 | individual_id), data = thickness_all)
-summary(thick_reg_ir_nospecies)
-```
-
-```{r volume-models, warning=FALSE, message=FALSE}
-volume_reg_ir <- lmer(vol_i ~ vol_r * species + (1 | individual_id), data = volume_all)
-summary(volume_reg_ir)
-
-volume_reg_ir_nospecies <- lmer(vol_i ~ vol_r + (1 | individual_id), data = volume_all)
-summary(volume_reg_ir_nospecies)
-```
-
 #Compare models using AIC;species & no species for Initial and Rehydrate
 
 ```{r height-AIC, warning=FALSE, message=FALSE}
@@ -126,70 +87,14 @@ model.sel(height_reg_ir, height_reg_ir_nospecies)
 #nospecies is better
 ```
 
-```{r width-AIC, warning=FALSE, message=FALSE}
-model.sel(width_reg_ir, width_reg_ir_nospecies)
-#nospecies is better
-```
-
-```{r perimeter-AIC, warning=FALSE, message=FALSE}
-model.sel(perimeter_reg_ir, perimeter_reg_ir_nospecies)
-#with species is better
-```
-
-```{r surf-AIC, warning=FALSE, message=FALSE}
-
-model.sel(surf_reg_ir, surf_reg_ir_nospecies)
-#species is better
-```
-
-```{r tdmc-AIC, warning=FALSE, message=FALSE}
-model.sel(tdmc_reg_ir, tdmc_reg_ir_nospecies)
-#species is better
-```
-
-```{r thick-AIC, warning=FALSE, message=FALSE}
-model.sel(thick_reg_ir, thick_reg_ir_nospecies)
-#nospecies is better, but doesn't really matter cause it's not a good predictor
-```
-
-```{r volume-AIC, warning=FALSE, message=FALSE}
-model.sel(volume_reg_ir, volume_reg_ir_nospecies)
-#with species is better
-```
-
-#Calculating R\^2 Values for the better models
+#Calculating R\^2 Value
 
 ```{r r^2-height, warning=FALSE, message=FALSE}
 MuMIn::r.squaredGLMM(height_reg_ir_nospecies)
 ```
 
-```{r r^2-width, warning=FALSE, message=FALSE}
-MuMIn::r.squaredGLMM(width_reg_ir_nospecies)
 
-```
-
-```{r r2-perimeter, warning=FALSE, message=FALSE}
-MuMIn::r.squaredGLMM(perimeter_reg_ir)
-```
-
-```{r r2-surf, warning=FALSE, message=FALSE}
-MuMIn::r.squaredGLMM(surf_reg_ir)
-
-```
-
-```{r r2-tdmc, warning=FALSE, message=FALSE}
-MuMIn::r.squaredGLMM(tdmc_reg_ir)
-```
-
-```{r r2-thick, warning=FALSE, message=FALSE}
-MuMIn::r.squaredGLMM(thick_reg_ir_nospecies)
-```
-
-```{r r2-volume, warning=FALSE, message=FALSE}
-MuMIn::r.squaredGLMM(volume_reg_ir)
-```
-
-#Save rehydration predictions as an object using ggpredict (so we can plot later)
+#Save predictions as an object using ggpredict (so we can plot later)
 
 ```{r, warning=FALSE, message=FALSE}
 height_ir_predictions <- ggpredict(height_reg_ir_nospecies, terms = "height_r[0:45]") %>% 
@@ -198,70 +103,18 @@ height_ir_predictions <- ggpredict(height_reg_ir_nospecies, terms = "height_r[0:
 height_ir_predictions
 ```
 
-```{r, warning=FALSE, message=FALSE}
-width_ir_predictions <- ggpredict(width_reg_ir_nospecies, terms = "width_r[0:30]") %>% #max width = 24
-  mutate(trait = "width") 
+
+```{r}
+width_ih_predictions <- ggpredict(width_reg_ih_nospecies, terms = "width_h[0:30]") #max width = 24
 
 # look at the data frame
-width_ir_predictions
+width_ih_predictions
 
-```
-
-```{r, warning=FALSE, message=FALSE}
-perimeter_ir_predictions <- ggpredict(perimeter_reg_ir, terms = "per_r[0:375]") %>% 
-  mutate(trait = "perimeter")
-
-perimeter_ir_predictions_species <- ggpredict(perimeter_reg_ir, terms = c("per_r", "species")) %>% 
+width_ih_predictions_species <- ggpredict(width_reg_ih, terms = c("width_h", "species")) %>% 
   as_tibble() %>% 
   rename(species = group)
-# look at the data frame
-perimeter_ir_predictions
 ```
 
-```{r, warning=FALSE, message=FALSE}
-surf_ir_predictions <- ggpredict(surf_reg_ir, terms = "surf_r[0:430]") %>% 
-  mutate(trait = "surface area")
-
-surf_ir_predictions_species <- ggpredict(surf_reg_ir, terms = c("surf_r", "species")) %>% 
-  as_tibble() %>% 
-  rename(species = group)
-# look at the data frame
-surf_ir_predictions
-```
-
-```{r, warning=FALSE, message=FALSE}
-tdmc_ir_predictions <- ggpredict(tdmc_reg_ir, terms = "weight_r[0:29050]") %>% 
-  as_tibble() %>% 
-  mutate(trait = "thallus dry matter content")
-
-tdmc_ir_predictions_species <- ggpredict(tdmc_reg_ir, terms = c("weight_r", "species")) %>% 
-  as_tibble() %>% 
-  rename(species = group)
-# look at the data frame
-tdmc_ir_predictions
-
-```
-
-```{r rehydrate_thick - prediction, warning=FALSE, message=FALSE}
-thick_ir_predictions <- ggpredict(thick_reg_ir_nospecies, terms = "thick_r[0:2]")  %>% 
-  mutate(trait = "thickness")
-
-# look at the data frame
-thick_ir_predictions
-
-```
-
-```{r rehydrate_volume - prediction, warning=FALSE, message=FALSE}
-volume_ir_predictions <- ggpredict(volume_reg_ir, terms = "vol_r[0:30]") %>% 
-  mutate(trait = "volume")
-
-volume_ir_predictions_species <- ggpredict(volume_reg_ir, terms = c("vol_r", "species")) %>% 
-  as_tibble() %>% 
-  rename(species = group)
-# look at the data frame
-volume_ir_predictions
-
-```
 
 #Visualize the rehydrate models without species
 
@@ -317,8 +170,113 @@ R squared = 0.996")
 height_ir_plot
 ```
 
+
+```{r, warning=FALSE, message=FALSE}
+width_ih_plot <- ggplot() +
+  
+  # plot the raw data as points
+  geom_point(data = width_all,
+             aes(x = width_h,
+                 y = width_i),
+             alpha = 0.5,
+             color = model_col,
+             shape = 21) +
+  
+  # plot a 1:1 reference line
+  geom_abline(slope = 1, 
+              intercept = 0,
+              linetype = 2,
+              linewidth = 1,
+              color = ref_line_col) +
+  
+  # plot the confidence interval 
+  geom_ribbon(data = width_ih_predictions,
+              aes(x = x,
+                  y = predicted,
+                  ymin = conf.low,
+                  ymax = conf.high),
+              alpha = 0.2,
+              fill = model_col) +
+  
+  # plot the prediction line
+  geom_line(data = width_ih_predictions,
+            aes(x = x,
+                y = predicted),
+            color = model_col,
+            linewidth = 1) +
+  
+  # labels
+  labs(x = "Herbarium width (mm)",
+       y = "Initial width (mm)") +
+  
+  # controlling axes to make the plot look square
+  # this makes it easier to see the difference between the model and the 1:1 line
+  scale_x_continuous(breaks = seq(from = 0, to = 20, by = 5), 
+                     limits = c(0, 20)) +
+  scale_y_continuous(breaks = seq(from = 0, to = 20, by = 5), 
+                     limits = c(0, 20))
+width_ih_plot
+
+###############################################################################
+#SPECIES FACET
+
+width_ih_plot_species <- ggplot() +
+  
+  geom_point(data = width_all,
+             aes(x = width_h,
+                 y = width_i,
+                 color = species),
+             alpha = 0.5,
+             shape = 21) + 
+  
+  # plot a 1:1 reference line
+  geom_abline(slope = 1, 
+              intercept = 0,
+              linetype = 2,
+              linewidth = 1,
+              color = ref_line_col) +
+  
+  # plot the confidence intervals
+  geom_ribbon(data = width_ih_predictions_species,
+            aes(x = x,
+                y = predicted,
+                ymin = conf.low,
+                ymax = conf.high,
+                fill = species,
+                group = species),
+            alpha = 0.2) +
+  
+  # plot the model predictions
+  geom_line(data = width_ih_predictions_species,
+            aes(x = x,
+                y = predicted,
+                color = species,
+                group = species)) +
+  
+  # labels
+  labs(x = "Herbarium width (mm)",
+       y = "Initial width (mm)") +
+  
+  # theme
+  theme(legend.position = "none",
+        strip.background = element_blank(),
+        strip.text = element_text(size = 12)) +
+  
+  # facet
+  facet_wrap(~ species, nrow = 2,
+             scales = "free")
+
+
+  width_ih_plot_species
+
+```
+
+
+
+
+
 # 2c Questions
 
 1.  I have learned that linear models vary in efficacy based on the incorporation of species.
 2.  Yes, but I think I still need to review if my residuals look okay! I might have to restructure data, but I hope not. I'm still trying to think about what I want to say about my data. I want to create a summary figure, but I'm not sure what I should include.
-3.  I think I'll have a really hard time with my residual checks and creating a summary figure. I should go to office hours.
+3.  I think I'll have a really hard time with my residual checks and creating a summary figure with all species...It seems too busy; I should go to office hours.
